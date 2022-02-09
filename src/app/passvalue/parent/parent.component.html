@@ -1,0 +1,4 @@
+<div id="post{{i}}" *ngFor="let item of data; let i=index">
+
+  <app-child [item]="item" (hint)="showHint($event)"></app-child>
+</div>
