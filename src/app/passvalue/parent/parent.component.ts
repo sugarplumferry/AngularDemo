@@ -28,12 +28,17 @@ export class ParentComponent implements OnInit {
     ]
   }
 
+  isShowHint = false;
   showHint(item: any){
+    if(this.isShowHint)
+      return;
+    this.isShowHint = true;
     let index = this.data.indexOf(item);
     let temp = this.data[index].Content;
     this.data[index].Content = this.data[index].Hint;
     setTimeout(()=>{
-      this.data[index].Content = temp
+      this.data[index].Content = temp;
+      this.isShowHint = false;
     }, 1000)
   }
 
